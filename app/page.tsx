@@ -1,8 +1,10 @@
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div>
+    <div >
       <h1>Zylera Ecommerce</h1>
+      <Button variant={"outline"}>Button</Button>
     </div>
   );
 }
