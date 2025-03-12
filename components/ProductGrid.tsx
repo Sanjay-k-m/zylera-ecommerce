@@ -7,7 +7,7 @@ import { Product } from "@/sanity.types";
 import ProductCard from "./ProductCard";
 import NoProductsAvailable from "./NoProductsAvailable";
 import { Loader2 } from "lucide-react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 const ProductGrid = () => {
   const [selectedTab, setSelectedTab] = useState(productType[0]?.title || "");
@@ -41,12 +41,14 @@ const ProductGrid = () => {
         </div>
       ) : (
         <>
-          {products?.length > 0 ? (
+          {products?.length ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10  w-full">
               {products?.map((product: Product) => (
-                <div key={product._id}>
-                  <ProductCard product={product} />
-                </div>
+                <AnimatePresence key={product._id}>
+                  <motion.div layout initial={{opacity:0.2}} animate={{opacity:1}} exit={{opacity:0}}>
+                    <ProductCard product={product} />
+                  </motion.div>
+                </AnimatePresence>
               ))}
             </div>
           ) : (
