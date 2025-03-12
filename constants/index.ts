@@ -1,4 +1,4 @@
- export const headerData = [
+export const headerData = [
   {
     title: "Home",
     href: "/",
@@ -20,3 +20,10 @@
   { title: "Gifts", href: "/gifts" },
 ];
 
+export const productType = [
+  { title: "Tshirt", value: "tshirt" },
+  { title: "Jacket", value: "jacket" },
+  { title: "Pant", value: "pant" },
+  { title: "Hoodie", value: "hoodie" },
+  { title: "Shorts", value: "shorts" },
+];
