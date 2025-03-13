@@ -50,7 +50,7 @@ const SocialMedia = ({ className, iconClassName, tooltipClassName }: Props) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "p-2 border rounded-xl  hover:text-white hover:border-white hoverEffect ",
+                  `p-2 border rounded-xl   hover:text-white hover:border-white hoverEffect `,
                   iconClassName
                 )}
               >
