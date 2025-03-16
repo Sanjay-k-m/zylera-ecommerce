@@ -8,7 +8,7 @@ import CartIcon from "./CartIcon";
 import { currentUser } from "@clerk/nextjs/server";
 import { ClerkLoaded, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import { ListOrdered, ShoppingBag } from "lucide-react";
+import { ListOrdered,  } from "lucide-react";
 
 const Header = async () => {
   const user = await currentUser();
