@@ -8,15 +8,19 @@ import CartIcon from "./CartIcon";
 import { currentUser } from "@clerk/nextjs/server";
 import { ClerkLoaded, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import { ListOrdered,  } from "lucide-react";
+import { ListOrdered } from "lucide-react";
+import { getAllCategories } from "@/sanity/helpers/queries";
 
 const Header = async () => {
   const user = await currentUser();
   console.log("🚀 ~ Header ~ user:", user);
+  const categories = await getAllCategories();
+  console.log("🚀 ~ Header ~ categories:", categories)
+  
   return (
     <header className=" border-b  border-b-gray-400 py-4 sticky top-0 z-50 bg-white">
       <Container className="flex items-center justify-between gap-7 text-custom-lightColor">
-        <HeaderMenu />
+        <HeaderMenu  categories={categories}/>
         <div className="w-auto md:w-1/3 flex items-center justify-center gap-2.5">
           <MobileMenu /> <Logo className="">Zylera </Logo>
         </div>
