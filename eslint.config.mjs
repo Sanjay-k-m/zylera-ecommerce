@@ -12,13 +12,9 @@ const compat = new FlatCompat({
 
 const eslintConfig = {
   ...compat.extends("next/core-web-vitals", "next/typescript"),
-<<<<<<< HEAD
-  rules: {"no-unused-vars": "off",},
-=======
   rules: {
     "no-unused-vars": "off",
   },
->>>>>>> c8f0a6c (vercel dep update)
 };
 
 export default eslintConfig;
