@@ -52,7 +52,7 @@ const ProductGrid = () => {
               ))}
             </div>
           ) : (
-            <NoProductsAvailable />
+            <NoProductsAvailable selectedTab=""/>
           )}
         </>
       )}

@@ -12,12 +12,12 @@ const AboutPage = () => {
       </p>
       <p className="mb-4">
         We believe that fashion should be fun and accessible to everyone,
-        regardless of age, size, or style. That's why we offer a wide range of
+        regardless of age, size, or style. That&apos;s why we offer a wide range of
         clothing items, from casual wear to formal wear, in a variety of sizes
         and styles.
       </p>
       <p>
-        At Zylera, we're committed to providing our customers with the best
+        At Zylera, we&apos;re committed to providing our customers with the best
         possible shopping experience. We strive to provide fast shipping, easy
         returns, and excellent customer service.
       </p>
