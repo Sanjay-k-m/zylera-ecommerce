@@ -2,8 +2,9 @@
 import { AlignLeft } from "lucide-react";
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
+import { CATEGORIES_QUERYResult } from "@/sanity.types";
 
-const MobileMenu = () => {
+const MobileMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <>
@@ -14,6 +15,7 @@ const MobileMenu = () => {
         <Sidebar
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
+          categories={categories}
         />
       </div>
     </>

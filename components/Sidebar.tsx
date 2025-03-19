@@ -7,12 +7,17 @@ import Link from "next/link";
 import { headerData } from "@/constants";
 import SocialMedia from "./SocialMedia";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
+import { CATEGORIES_QUERYResult } from "@/sanity.types";
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
-const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
+const Sidebar: FC<SidebarProps & { categories: CATEGORIES_QUERYResult }> = ({
+  isOpen,
+  onClose,
+  categories,
+}) => {
   const pathname = usePathname();
   const sidebarRef = useOutsideClick<HTMLDivElement>(onClose);
   return (
@@ -37,17 +42,17 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
         <div className="flex flex-col gap-3.5 text-base font-semibold tracking-wide ">
-          {headerData.map((item, index) => {
+          {categories.map((category, index) => {
             return (
               <Link
                 onClick={onClose}
                 key={index}
-                href={item?.href}
+                href={`/category/${category?.slug?.current}`}
                 className={`text-gray-400 hover:text-white hoverEffect ${
-                  pathname === item?.href && "text-white"
+                  pathname === category?.slug?.current && "text-white"
                 }`}
               >
-                {item?.title}
+                {category?.title}
               </Link>
             );
           })}
